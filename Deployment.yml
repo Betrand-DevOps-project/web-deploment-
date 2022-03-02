@@ -1,0 +1,20 @@
+Kind: Deployment 
+apiVersion: apps/v1
+metadata:
+   name: mrdevops
+spec:
+   replicas:2
+   selector:
+   matchlabels:
+    app: mrdevops
+  template:
+     metadata:
+       labels:
+         app: mrdevops
+     spec:
+     containers:
+      - name: mrdevops
+        image: vikashashoke/kubernetes-image
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
